@@ -9,5 +9,14 @@
 <body>
 <ul>
   <li><a href='ListAllSVC.jsp'>List</a> all Emps. </li>
+  <li>
+  	<form method="post" action="/proj01web/Controller">
+		  <b>輸入服務代號(如1000)</b>
+		  <input type="text" name="servno">
+		  <input type="submit" value="送出" >
+		  <input type="hidden" name="action" value="get_one_for_display">
+  	</form>
+  	</li>
+  </ul>
 </body>
 </html>

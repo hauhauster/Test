@@ -9,7 +9,7 @@ public class ServiceDAOsvc {
 	public ServiceDAOsvc() {
 		dao=new ServiceDAO();
 	}
-	public ServiceVO addservice(String servno,String servclassno,String servname,String servdiscribe,
+	public ServiceVO addSVC(String servno,String servclassno,String servname,String servdiscribe,
 			Date servupdate,Integer status){
 		ServiceVO serviceVO = new ServiceVO();
 		serviceVO.setServno(servno);
@@ -21,7 +21,7 @@ public class ServiceDAOsvc {
 		dao.insert(serviceVO);
 		return serviceVO;
 	}
-	public ServiceVO updateservice(String servno,String servclassno,String servname,String servdiscribe,
+	public ServiceVO updateSVC(String servno,String servclassno,String servname,String servdiscribe,
 			Date servupdate,Integer status) {
 
 		ServiceVO ServiceVO = new ServiceVO();
@@ -35,6 +35,12 @@ public class ServiceDAOsvc {
 		
 		dao.update(ServiceVO);
 
+		return dao.getOne(servno);
+	}
+	public void deleteSVC(String servno){
+		dao.delete(servno);
+	}
+	public ServiceVO getOne(String servno){
 		return dao.getOne(servno);
 	}
 	public List<ServiceVO> getAll(){
